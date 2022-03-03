@@ -4,8 +4,15 @@ import Link from 'next/link'
 const Home = () =>{
     return <>
 
-    <div className='mx-auto bg-red-500 text-center shadow-md p-4'>
-       
+    <div className='mx-auto bg-red-500 text-center opacity-75'>
+           
+        <div>
+           <Link href='/'>
+             <a><img id="icone" src="icon.jpg.jpg"></img> </a>
+           </Link>
+        </div>
+        
+      
       <Link  href='/'>
         <a className='italic m-4'>Home</a>
       </Link>
