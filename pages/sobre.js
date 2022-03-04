@@ -1,9 +1,15 @@
 import React from "react"
 import Link from "next/link"
+import Head from "next/head"
 
 const Sobre = () =>{
      
    return <>
+     <Head>
+     <title>Sobre</title>
+     </Head> 
+ 
+
     <div className="mx-auto text-center bg-green-400 opacity-75">
       <Link href='/'>
       <img id="icone" src="icon.jpg.jpg"></img>
