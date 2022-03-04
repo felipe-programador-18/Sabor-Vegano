@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
-
+import Head from "next/head";
 
 
 const Option = (props) =>{
@@ -11,18 +11,16 @@ const Option = (props) =>{
         )
 }
 
-const Para = (props) =>{
-    return(
-        <p>{props.text}</p>
-    )
-}
-
 
 const Pedidos = () => {
     
     const [seleciona, setseleciona] = useState('')
     return <>
     
+    <Head>
+     <title>Pedidos</title>
+     </Head> 
+ 
     
     <div className="mx-auto text-center bg-blue-400 opacity-75">
        <Link href='/'>
@@ -52,15 +50,16 @@ const Pedidos = () => {
         </form>   
 
          
-         <h1>Selecione Pedido:</h1>
+         <h1 className="font-bold">Selecione Pedido:</h1>
         <select className="m-4" one={seleciona} onChange={e=>setseleciona(e.target.value)}>
          <Option  menu='Super Vegano: R$:35.90 ' />
          <Option  menu='Hamburger Vegano:  R$:45.90 ' />
          <Option  menu='Picadão Vegano: R$:65.90 ' />
          
          </select>
-           <Para text= 'Voce selecionou:' />
-           {seleciona}
+        
+
+           <p className="font-bold">Voce selecionou:{seleciona} </p>
 
        </div>
        
