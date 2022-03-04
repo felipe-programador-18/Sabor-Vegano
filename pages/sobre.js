@@ -63,7 +63,7 @@ const Sobre = () =>{
        </p>
       </div>
 
-      <Link href='/'>
+      <Link href='/pedidos'>
       <button className="bg-yellow-500  hover:bg-violet-700 rounded-full p-2">Fazer pedido</button> 
       </Link>
       </div>
