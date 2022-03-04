@@ -17,7 +17,7 @@ const Home = () =>{
         <a className='italic m-4'>Home</a>
       </Link>
 
-      <Link href='/pedido'>
+      <Link href='/pedidos'>
       <a className='italic' >Pedidos</a>
       </Link>
 
