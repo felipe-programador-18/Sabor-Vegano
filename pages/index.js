@@ -1,8 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const Home = () =>{
     return <>
+     
+    <Head>
+     <title>Home</title>
+    </Head>
 
     <div className='mx-auto bg-red-500 text-center opacity-75'>
            
