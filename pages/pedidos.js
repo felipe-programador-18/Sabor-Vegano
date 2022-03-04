@@ -14,7 +14,15 @@ const Option = (props) =>{
 
 const Pedidos = () => {
     
-    const [seleciona, setseleciona] = useState('')
+     const [seleciona, setseleciona] = useState('')
+     const [form, setform]= useState({
+         nome:'',
+         email:'',
+         whatshap:'',
+         endereco:''
+     })
+
+
     return <>
     
     <Head>
@@ -37,16 +45,16 @@ const Pedidos = () => {
 
         <form  method="get" action="formulario">
         <label className="font-bold text-center">Seu Nome</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='text' placeholder="nome"></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='text' placeholder="Nome"  name='Nome' ></input>
         
         <label className="font-bold text-center">E-mail</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='email' placeholder="e-mail"></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='email' placeholder="Email"   name='Email'></input>
         
         <label className="font-bold text-center">Whatsaap</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='number' placeholder="Celular"></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='number' placeholder="Celular"  name='Celular' ></input>
        
         <label className="font-bold text-center">Endereço</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='text' placeholder="Endereço"></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='text' placeholder="Endereço"   name='Endereço'></input>
         </form>   
 
          
@@ -60,7 +68,9 @@ const Pedidos = () => {
         
 
            <p className="font-bold">Voce selecionou:{seleciona} </p>
-
+            
+            
+            <button className='bg-blue-400 px-12 py-4 ml-12 m-4 font-white rounded-lg hover:shadow hover:bg-red-500 ' >Comprar</button>
        </div>
        
     
