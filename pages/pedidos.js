@@ -21,7 +21,14 @@ const Pedidos = () => {
          whatshap:'',
          endereco:''
      })
-
+     
+     const save = async() =>{
+         const form ={
+             Nome:'aaa',
+             Email:'',
+             whatshap:''
+         }
+     }
 
     return <>
     
@@ -70,7 +77,7 @@ const Pedidos = () => {
            <p className="font-bold">Voce selecionou:{seleciona} </p>
             
             
-            <button className='bg-blue-400 px-12 py-4 ml-12 m-4 font-white rounded-lg hover:shadow hover:bg-red-500 ' >Comprar</button>
+            <button onClick={save} className='bg-blue-400 px-12 py-4 ml-12 m-4 font-white rounded-lg hover:shadow hover:bg-red-500 ' >Comprar</button>
        </div>
        
     
