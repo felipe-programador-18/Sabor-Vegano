@@ -53,10 +53,13 @@ const Home = () =>{
           
                <div className='xl-auto text-center'>
                      
-               <video className='mx-auto mb-8 opacity-75 mt-8 '  controls>
-                 <source src='movie.mp4.mp4' type='video/mp4'></source>
-               </video>
-                           
+                    <div className='bg-white opacity-75'>
+                    <h2 className='font-bold text-center capitalize'>Sabor Vegano, criado para inovar e saborear o paladar do povo vegano.</h2>
+                     <video className='mx-auto mb-8 opacity-100 mt-8'  controls>
+                       <source src='movie.mp4.mp4' type='video/mp4'></source>
+                     </video>
+                     </div>
+
                <Link href='/sobre'>
                  <a className='bg-blue-400 px-12 py-4 m-2 font-bold rounded-lg shadow-lg hover:shadow '>Sobre</a>
                </Link>
