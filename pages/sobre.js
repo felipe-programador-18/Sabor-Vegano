@@ -14,7 +14,7 @@ const Sobre = () =>{
       <Link href='/'>
       <img id="icone" src="icon.jpg.jpg"></img>
       </Link>
-        <h1 className="bold text-lg">Sabor Vegano</h1>
+        <h1 className="font-bold text-center">Sabor Vegano</h1>
          
     </div> 
     
