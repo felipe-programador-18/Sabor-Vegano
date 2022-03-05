@@ -1,10 +1,14 @@
 import React from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import useSWR from 'swr'
+
+const fetcher = (...args)=> fetch(...args).then(res => res.json())
+
 
 const Home = () =>{
-    return <>
-     
+  const {data, error} = useSWR('/api/get-promo', fetcher)
+  return <>
     <Head>
      <title>Home</title>
     </Head>
@@ -42,7 +46,27 @@ const Home = () =>{
      <div className='bg-yellow-500 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'>  <img src='suco.jpg'></img> </div>
    </div>
        
-    
+       
+          
+
+               
+          
+               <div className='xl-auto text-center'>
+                     
+               <video className='mx-auto mb-8 opacity-75 mt-8 '  controls>
+                 <source src='movie.mp4.mp4' type='video/mp4'></source>
+               </video>
+                           
+               <Link href='/sobre'>
+                 <a className='bg-blue-400 px-12 py-4 m-2 font-bold rounded-lg shadow-lg hover:shadow '>Sobre</a>
+               </Link>
+               
+               </div>
+
+               {!data && <pre><p>Carregando...</p></pre>}
+               {data && data.showCoupon &&
+                <p className='font-bold text-center mt-8'> {data.mensagem} </p>
+                }
     </>
 }
 
