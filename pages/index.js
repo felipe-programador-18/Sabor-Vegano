@@ -67,6 +67,16 @@ const Home = () =>{
                { !error &&  data && data.showCoupon &&
                 <p className='font-bold text-center mt-8'> {data.mensagem} </p>
                 }
+
+
+
+                   <div className=" bg-black h-20  mx-auto text-center m-4 mt-24"> 
+                     <footer>
+                         <h1 id='footer'>Desenvolvido por: Felipe Martins </h1>
+                         <h1 id='footer' >Github: <a href="https://github.com/felipe-programador-18">Fe-Prog-18 </a> </h1>
+                         <h1 id='footer' >Linkedln: <a href="https://www.linkedin.com/in/felipe-martins-programador/"> Felipe Martins</a> </h1>
+                      </footer>
+                     </div>
     </>
 }
 
