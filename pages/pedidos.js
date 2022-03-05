@@ -13,22 +13,27 @@ const Option = (props) =>{
 
 
 const Pedidos = () => {
-    
+     //here select food 
      const [seleciona, setseleciona] = useState('')
-     const [form, setform]= useState({
-         nome:'',
-         email:'',
-         whatshap:'',
-         endereco:''
-     })
      
      const save = async() =>{
          const form ={
              Nome:'aaa',
-             Email:'',
-             whatshap:''
+             Email:'bbb',
+             whatshap:'434324234'
          }
-     }
+     
+      try{   
+     const response = await fetch('/api/save', {
+             method:'POST',
+             body: JSON.stringify(form)
+         })
+         const data = await response.json()
+         console.log(data)
+        }catch(err){
+            
+        }
+     } 
 
     return <>
     
@@ -41,7 +46,7 @@ const Pedidos = () => {
        <Link href='/'>
            <img id="icone" src="icon.jpg.jpg"></img>
       </Link>
-          <h1 className="bold text-lg">Sabor Vegano</h1>
+          <h1 className="font-bold text-center">Sabor Vegano</h1>
        
     </div> 
        
