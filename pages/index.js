@@ -19,6 +19,7 @@ const Home = () =>{
            <Link href='/'>
              <a><img id="icone" src="icon.jpg.jpg"></img> </a>
            </Link>
+           <h1 className='center font-bold'>Sabor Vegano</h1>
         </div>
         
       
