@@ -64,7 +64,7 @@ const Home = () =>{
                </div>
 
                {!data && <pre><p>Carregando...</p></pre>}
-               {data && data.showCoupon &&
+               { !error &&  data && data.showCoupon &&
                 <p className='font-bold text-center mt-8'> {data.mensagem} </p>
                 }
     </>
