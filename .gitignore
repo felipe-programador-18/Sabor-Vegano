@@ -3,4 +3,3 @@ package-lock.json
 .next
 credentials.json
 .env.local
-.vscode
