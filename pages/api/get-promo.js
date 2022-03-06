@@ -23,16 +23,14 @@ export default async(req, res) =>{
        
        const Textaffordable = sheet.getCell(1,1)
        console.log(Textaffordable.value)
-      
+       
+       res.end(JSON.stringify({
+        showCoupon: false,
+        mensagem:'Olá Vegamania, tudo bem?'
+    }))
+
        } catch(err) {
        console.log(err)
        }
    
-
-
-
-    res.end(JSON.stringify({
-        showCoupon: false,
-        mensagem:'Olá Vegamania, tudo bem?'
-    }))
 }
