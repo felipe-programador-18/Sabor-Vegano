@@ -1,18 +1,19 @@
 import  { GoogleSpreadsheet } from 'google-spreadsheet'
-import credentials from '../../credentials.json'
+
 // here to connect spreadsheet!!!
 
-const doc = new GoogleSpreadsheet('1NDvbzZlWgP7UjnEsdkcC6SJIpAzjKshjZ_gDo-4CQoI')
-
-
-
+const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
 // remember here i get Api coupon
 //create message coupon
 export default async(req, res) =>{
     //get some dates of connection spreadsheet
     try{
-        await doc.useServiceAccountAuth(credentials)
+       
+        await doc.useServiceAccountAuth({
+            client_email:process.env.SHEET_CLIENT_EMAIL,
+            private_key:process.env.SHEET_PRIVATE_KEY
+        })
         await doc.loadInfo()
 
        const sheet = doc.sheetsByIndex[2]
@@ -30,7 +31,7 @@ export default async(req, res) =>{
        } catch(err) {
            //if gave error i dont show anymore mensage
         res.end(JSON.stringify({
-            showCoupon: SeePrice.value === 'FALSE',
+            showCoupon:false,
             mensagem:''
         }))
        }

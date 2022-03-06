@@ -1,3 +1,6 @@
 node_modules
 package-lock.json
 .next
+credentials.json
+.env.local
+.vscode

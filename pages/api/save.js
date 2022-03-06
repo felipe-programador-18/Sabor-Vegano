@@ -1,7 +1,6 @@
 import  { GoogleSpreadsheet } from 'google-spreadsheet'
-import credentials from '../../credentials.json'
 import moment from 'moment'
-const doc = new GoogleSpreadsheet('1NDvbzZlWgP7UjnEsdkcC6SJIpAzjKshjZ_gDo-4CQoI')
+const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID)
 
 //create function outside and later get function inside only getcoupon
 const genCoupon = () => {
@@ -12,7 +11,10 @@ const genCoupon = () => {
 
 export default async(req, res) =>{
     try{
-        await doc.useServiceAccountAuth(credentials)
+      await doc.useServiceAccountAuth({
+        client_email:process.env.SHEET_CLIENT_EMAIL,
+        private_key:process.env.SHEET_PRIVATE_KEY
+       })
         await doc.loadInfo()
         
         const sheetConfig = doc.sheetsByIndex[2]
