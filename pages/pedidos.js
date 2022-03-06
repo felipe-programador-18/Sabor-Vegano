@@ -20,7 +20,9 @@ const Pedidos = () => {
          const form ={
              Nome:'aaa',
              Email:'bbb',
-             whatshap:'434324234'
+             Whatsaap:'434324234',
+             Cupon:'fadf',
+             Promo:'adfdf'
          }
      
       try{   
@@ -31,7 +33,7 @@ const Pedidos = () => {
          const data = await response.json()
          console.log(data)
         }catch(err){
-            
+
         }
      } 
 
