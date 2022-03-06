@@ -15,11 +15,10 @@ export default async(req, res) =>{
         await doc.useServiceAccountAuth(credentials)
         await doc.loadInfo()
 
-        const sheet = doc.sheetsByIndex[2]
+       const sheet = doc.sheetsByIndex[2]
        await sheet.loadCells('A2:B2')
       
        const SeePrice = sheet.getCell(1,0)
-       
        const Textaffordable = sheet.getCell(1,1)
        
        
