@@ -1,5 +1,5 @@
 import  { GoogleSpreadsheet } from 'google-spreadsheet'
-import credentials from './credentials.json'
+import credentials from '../../credentials.json'
 // here to connect spreadsheet!!!
 
 const doc = new GoogleSpreadsheet('1NDvbzZlWgP7UjnEsdkcC6SJIpAzjKshjZ_gDo-4CQoI')
@@ -19,18 +19,21 @@ export default async(req, res) =>{
        await sheet.loadCells('A2:B2')
       
        const SeePrice = sheet.getCell(1,0)
-       console.log(SeePrice.value)
        
        const Textaffordable = sheet.getCell(1,1)
-       console.log(Textaffordable.value)
+       
        
        res.end(JSON.stringify({
         showCoupon: SeePrice.value === 'VERDADEIRO',
-        mensagem:'Olá Vegamania, tudo bem?'
+        mensagem:Textaffordable.value
     }))
 
        } catch(err) {
-       console.log(err)
+           //if gave error i dont show anymore mensage
+        res.end(JSON.stringify({
+            showCoupon: SeePrice.value === 'FALSE',
+            mensagem:''
+        }))
        }
    
 }
