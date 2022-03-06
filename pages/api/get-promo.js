@@ -25,7 +25,7 @@ export default async(req, res) =>{
        console.log(Textaffordable.value)
        
        res.end(JSON.stringify({
-        showCoupon: false,
+        showCoupon: SeePrice.value === 'VERDADEIRO',
         mensagem:'Olá Vegamania, tudo bem?'
     }))
 
