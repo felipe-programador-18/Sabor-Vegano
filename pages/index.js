@@ -39,12 +39,10 @@ const Home = () =>{
           
      <div className='flex flex-start justify-center opacity-100'>
      
-     <div className='bg-green-300 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'> <img src='file.jpg'></img> 
-     
-     </div>
-     <div className='bg-blue-300 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'> <img  src='sushi.jpg'></img> </div>
-     <div className='bg-violet-700 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'>  <img  src='vege.jpg'></img> </div>
-     <div className='bg-yellow-500 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'>  <img src='suco.jpg'></img> </div>
+     <div className='bg-green-300 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'> <a href='/sobre'><img src='file.jpg'></img> </a> </div>
+     <div className='bg-blue-300 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'> <a href='/sobre'><img src='sushi.jpg'></img> </a> </div>
+     <div className='bg-violet-700 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'>  <a href='/sobre'><img src='vege.jpg'></img> </a> </div>
+     <div className='bg-yellow-500 w-48 h-48 m-4 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300 ...'>  <a href='/sobre'><img src='suco.jpg'></img> </a> </div>
    </div>
        
        
