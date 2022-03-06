@@ -3,6 +3,11 @@ import credentials from '../../credentials.json'
 import moment from 'moment'
 const doc = new GoogleSpreadsheet('1NDvbzZlWgP7UjnEsdkcC6SJIpAzjKshjZ_gDo-4CQoI')
 
+//create function outside and later get function inside only getcoupon
+const genCoupon = () => {
+  const code =  parseInt(moment().format('YYDDMMHHmmss')).toString(16).toUpperCase()
+  return  code.substr(0,4) + '-' + code.substr(4,4) + '-' + code.substr(8,4)
+}
 
 
 export default async(req, res) =>{
@@ -20,7 +25,7 @@ export default async(req, res) =>{
          let Promo =''   
          if( SeePrice.value ==='VERDADEIRO'){
            // THOUGHT SOLUTION ABOUT GENERATE COUPON!!
-              Cupon='Temporario',
+              Cupon= genCoupon(),
               Promo = Textaffordable.value
             }
 
