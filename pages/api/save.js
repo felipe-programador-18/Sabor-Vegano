@@ -1,7 +1,6 @@
 import  { GoogleSpreadsheet } from 'google-spreadsheet'
 import credentials from '../../credentials.json'
-// here to connect spreadsheet!!!
-
+import moment from 'moment'
 const doc = new GoogleSpreadsheet('1NDvbzZlWgP7UjnEsdkcC6SJIpAzjKshjZ_gDo-4CQoI')
 
 
@@ -32,7 +31,8 @@ export default async(req, res) =>{
              Nome: data.Nome,
              Email: data.Email,
              Whatsaap: data.Whatsaap,
-             'Data Prenchimento': new Date(),
+             Pedido:'Picadão vegano',
+             'Data Prenchimento': moment().format(' DD/MM/YYYY, HH:mm:ss'),
              Cupon,
              Promo,
          })
