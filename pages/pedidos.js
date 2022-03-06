@@ -21,6 +21,7 @@ const Pedidos = () => {
              Nome:'aaa',
              Email:'bbb',
              Whatsaap:'434324234',
+             Pedido:'Picadao vegano',
              Cupon:'fadf',
              Promo:'adfdf'
          }
