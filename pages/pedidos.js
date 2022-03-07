@@ -67,23 +67,23 @@ const Pedidos = () => {
        
 
     
-       <div className="w-48 mx-auto py-4">
+       <div className="w-48 mx-auto py-4 border-box">
 
         
        { !success &&  <> 
         <h1 className="font-bold">Pedidos</h1>
          <form  method="get" action="formulario">
         <label className="font-bold text-center">Seu Nome</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='text' placeholder="Nome"  onChange={onChange}  name='Nome' value={form.Nome} ></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3 border-box" type='text' placeholder="Nome"  onChange={onChange}  name='Nome' value={form.Nome} ></input>
         
         <label className="font-bold text-center">E-mail</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='email' placeholder="Email"  onChange={onChange}  name='Email' value={form.Email}></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3 border-box" type='email' placeholder="Email"  onChange={onChange}  name='Email' value={form.Email}></input>
         
         <label className="font-bold text-center">Whatsaap</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='number' placeholder="Whatsaap" onChange={onChange}  name='Whatsaap' value={form.Whatsaap} ></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3 border-box " type='number' placeholder="Whatsaap" onChange={onChange}  name='Whatsaap' value={form.Whatsaap} ></input>
        
         <label className="font-bold text-center">Endereço</label>
-        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3" type='text' placeholder="Endereço"  onChange={onChange}  name='Endereço' value={form.Endereço} ></input>
+        <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3 border-box" type='text' placeholder="Endereço"  onChange={onChange}  name='Endereço' value={form.Endereço} ></input>
         
         
         </form> 
