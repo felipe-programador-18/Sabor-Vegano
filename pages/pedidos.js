@@ -23,6 +23,27 @@ const Pedidos = () => {
         Pedido:'',
         Cupon:'',
         Promo:''})
+
+      const validationError = {
+        Nome: false,
+        Email: false,
+        Whatsaap: false,
+       
+      }
+      
+      if(form.Nome === ''){
+        validationError.Nome = true
+      }
+      if(form.Email === '' || form.Email.indexOf('@') < 0 ){
+        validationError.Email = true
+      }
+      if(form.Whatsaap === ''){
+        validationError.Whatsaap = true
+      }
+      
+       //create functions that manage all form 
+      const hasError = Object.keys(validationError).reduce((prev, curr) => prev ||  validationError[curr] , false)
+
      
         const [success, setsucess] = useState(false)
         const [ret, setretorno]= useState({})
@@ -44,17 +65,18 @@ const Pedidos = () => {
     const onChange = evt =>{
         const Value = evt.target.value
         const Key = evt.target.name
-        setform(old => ({
+        setform(old =>{ 
+           return {
           ...old ,
           [Key]: Value,
           
-      }))
+      }})
     }
 
     return <>
     
     <Head>
-     <title>Pedidos</title>
+     <title>Pedidos </title>
      </Head> 
  
     
@@ -72,7 +94,7 @@ const Pedidos = () => {
 
         
        { !success &&  <> 
-        <h1 className="font-bold">Pedidos</h1>
+        <h1 className="font-bold">Pedidos !! {JSON.stringify(hasError)} </h1>
          <form  method="get" action="formulario">
         <label className="font-bold text-center">Seu Nome</label>
         <input className="bg-blue-100 p-4 rounded-lg block py-4 m-3 border-box" type='text' placeholder="Nome"  onChange={onChange}  name='Nome' value={form.Nome} ></input>
@@ -97,7 +119,7 @@ const Pedidos = () => {
          
          </select>
            <p className="font-bold">Voce selecionou:{seleciona} </p>
-           <button onClick={save} className='bg-blue-400 px-12 py-4 ml-12 m-4 font-white rounded-lg hover:shadow hover:bg-red-500 ' >Comprar</button>
+           <button disabled={hasError}  onClick={save} className='bg-blue-400 px-12 py-4 ml-12 m-4 font-white rounded-lg hover:shadow hover:bg-red-500 ' >Comprar</button>
            </>
         }
         {success &&  <div className="w-48 mx-auto py-4 mb-4">
